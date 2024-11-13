@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "kernelspec": {
+      "name": "python",
+      "display_name": "Python (Pyodide)",
+      "language": "python"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "python",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.8"
+    }
+  },
+  "nbformat_minor": 5,
+  "nbformat": 4,
+  "cells": [
+    {
+      "id": "802169ef-057c-40ac-b555-46fccc643551",
+      "cell_type": "code",
+      "source": "<?xml version=\"1.0\"?>\n<flowgorithm fileversion=\"4.2\">\n    <attributes>\n        <attribute name=\"name\" value=\"Area quadrato con controllo\"/>\n        <attribute name=\"authors\" value=\"Frank\"/>\n        <attribute name=\"about\" value=\"\"/>\n        <attribute name=\"saved\" value=\"2024-10-09 11:43:23 \"/>\n        <attribute name=\"created\" value=\"RnJhbms7TEFQVE9QLUFIVDIwMkpEOzIwMjQtMTAtMDk7IjEwOjM5OjAxICI7MjcwNQ==\"/>\n        <attribute name=\"edited\" value=\"RnJhbms7TEFQVE9QLUFIVDIwMkpEOzIwMjQtMTAtMDk7IjExOjQzOjIzICI7NDsyODE2\"/>\n    </attributes>\n    <function name=\"Main\" type=\"None\" variable=\"\">\n        <parameters/>\n        <body>\n            <declare name=\"L, A\" type=\"Real\" array=\"False\" size=\"\"/>\n            <output expression=\"&quot;Ciao calcoliamo l'aria di un quadrato Dammi il lato del quadrato&quot;\" newline=\"True\"/>\n            <input variable=\"L\"/>\n            <while expression=\"L&lt;=0\">\n                <output expression=\"&quot;Scemo!Dammi un lato positivo&quot;\" newline=\"True\"/>\n                <input variable=\"L\"/>\n            </while>\n            <output expression=\"&quot;Calcolo l'aria del quadrato&quot;\" newline=\"True\"/>\n            <assign variable=\"A\" expression=\"L^2\"/>\n            <output expression=\"&quot;L'aria del quadrato &#232;:&quot;\" newline=\"True\"/>\n            <output expression=\"A\" newline=\"True\"/>\n        </body>\n    </function>\n</flowgorithm>\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "b9db1bd5-115b-4baf-83b6-11b53975b87a",
+      "cell_type": "code",
+      "source": "print(\"Ciao calcoliamo l'aria di un quadrato Dammi il lato del quadrato\")\nl = float(input())\nwhile l <= 0:\n    print(\"Scemo!Dammi un lato positivo\")\n    l = float(input())\nprint(\"Calcolo l'aria del quadrato\")\na = l ** 2\nprint(\"L'aria del quadrato è:\")\nprint(a)\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "4ea09ff5-566a-4e1d-9f8f-f96209b4b726",
+      "cell_type": "code",
+      "source": "<?xml version=\"1.0\"?>\n<flowgorithm fileversion=\"4.2\">\n    <attributes>\n        <attribute name=\"name\" value=\"Calcolo aria triangolo e quadrato\"/>\n        <attribute name=\"authors\" value=\"Frank\"/>\n        <attribute name=\"about\" value=\"\"/>\n        <attribute name=\"saved\" value=\"2024-10-17 08:34:18 \"/>\n        <attribute name=\"created\" value=\"RnJhbms7TEFQVE9QLUFIVDIwMkpEOzIwMjQtMTAtMTc7IjA4OjA3OjE5ICI7MjcxNQ==\"/>\n        <attribute name=\"edited\" value=\"RnJhbms7TEFQVE9QLUFIVDIwMkpEOzIwMjQtMTAtMTc7IjA4OjM0OjE4ICI7MjsyODIz\"/>\n    </attributes>\n    <function name=\"Main\" type=\"None\" variable=\"\">\n        <parameters/>\n        <body>\n            <declare name=\"A, L, B, h\" type=\"Real\" array=\"False\" size=\"\"/>\n            <declare name=\"Scelta\" type=\"String\" array=\"False\" size=\"\"/>\n            <output expression=\"&quot;Ciao, scrivi Q per calcolare l'area del quadrato oppure T per l'aria del triangolo&quot;\" newline=\"True\"/>\n            <input variable=\"Scelta\"/>\n            <if expression=\"Scelta==&quot;Q&quot;\">\n                <then>\n                    <output expression=\"&quot;Hai selezionato quadrato, dammi la misura del lato&quot;\" newline=\"True\"/>\n                    <input variable=\"L\"/>\n                    <while expression=\"L&lt;=0\">\n                        <output expression=\"&quot;Selezionare un lato positivo&quot;\" newline=\"True\"/>\n                        <input variable=\"L\"/>\n                    </while>\n                    <output expression=\"&quot;Calcolo l'aria...&quot;\" newline=\"True\"/>\n                    <assign variable=\"A\" expression=\"L^2\"/>\n                </then>\n                <else>\n                    <if expression=\"Scelta==&quot;T&quot;\">\n                        <then>\n                            <output expression=\"&quot;Hai selezionato triangolo, dammi la misura della base&quot;\" newline=\"True\"/>\n                            <input variable=\"B\"/>\n                            <while expression=\"B&lt;=0\">\n                                <output expression=\"&quot;Selezionare una base positiva&quot;\" newline=\"True\"/>\n                                <input variable=\"B\"/>\n                            </while>\n                            <output expression=\"&quot;Dammi l'altezza&quot;\" newline=\"True\"/>\n                            <input variable=\"h\"/>\n                            <while expression=\"h&lt;=0\">\n                                <output expression=\"&quot;Selezionare un'altezza positiva&quot;\" newline=\"True\"/>\n                                <input variable=\"h\"/>\n                            </while>\n                            <assign variable=\"A\" expression=\"B^h/2\"/>\n                        </then>\n                        <else>\n                            <output expression=\"&quot;T'avevo detto di scegliere T o Q&quot;\" newline=\"True\"/>\n                            <assign variable=\"A\" expression=\"0\"/>\n                        </else>\n                    </if>\n                </else>\n            </if>\n            <output expression=\"&quot;L'aria della figura &#232;:&quot;\" newline=\"True\"/>\n            <output expression=\"A\" newline=\"True\"/>\n        </body>\n    </function>\n</flowgorithm>\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "10d2f3f0-d2e1-480a-bb07-5c8873862fd9",
+      "cell_type": "code",
+      "source": "print(\"Ciao, scrivi Q per calcolare l'area del quadrato oppure T per l'aria del triangolo\")\nscelta = input()\nif scelta == \"Q\":\n    print(\"Hai selezionato quadrato, dammi la misura del lato\")\n    l = float(input())\n    while l <= 0:\n        print(\"Selezionare un lato positivo\")\n        l = float(input())\n    print(\"Calcolo l'aria...\")\n    a = l ** 2\nelse:\n    if scelta == \"T\":\n        print(\"Hai selezionato triangolo, dammi la misura della base\")\n        b = float(input())\n        while b <= 0:\n            print(\"Selezionare una base positiva\")\n            b = float(input())\n        print(\"Dammi l'altezza\")\n        h = float(input())\n        while h <= 0:\n            print(\"Selezionare un'altezza positiva\")\n            h = float(input())\n        a = b ** h / 2\n    else:\n        print(\"T'avevo detto di scegliere T o Q\")\n        a = 0\nprint(\"L'aria della figura è:\")\nprint(a)\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "643f254d-63c6-4394-9232-6c03ce9ec837",
+      "cell_type": "code",
+      "source": "<?xml version=\"1.0\"?>\n<flowgorithm fileversion=\"4.2\">\n    <attributes>\n        <attribute name=\"name\" value=\"carta,forbice,sasso\"/>\n        <attribute name=\"authors\" value=\"Frank\"/>\n        <attribute name=\"about\" value=\"\"/>\n        <attribute name=\"saved\" value=\"2024-10-23 11:28:58 \"/>\n        <attribute name=\"created\" value=\"RnJhbms7TEFQVE9QLUFIVDIwMkpEOzIwMjQtMTAtMjM7IjEwOjE0OjU5ICI7MjcwNw==\"/>\n        <attribute name=\"edited\" value=\"RnJhbms7TEFQVE9QLUFIVDIwMkpEOzIwMjQtMTAtMjM7IjExOjA5OjQ2ICI7MTtGcmFuaztMQVBUT1AtQUhUMjAySkQ7MjAyNC0xMC0yMzsiMTA6MTQ6NTkgIjs1NTgy\"/>\n        <attribute name=\"edited\" value=\"RnJhbms7TEFQVE9QLUFIVDIwMkpEOzIwMjQtMTAtMjM7IjExOjI4OjU4ICI7NzsyODI2\"/>\n    </attributes>\n    <function name=\"Main\" type=\"None\" variable=\"\">\n        <parameters/>\n        <body>\n            <declare name=\"scelta, computer\" type=\"String\" array=\"False\" size=\"\"/>\n            <declare name=\"numero\" type=\"Integer\" array=\"False\" size=\"\"/>\n            <output expression=\"&quot;Carta,forbice o sasso?&quot;\" newline=\"True\"/>\n            <input variable=\"scelta\"/>\n            <while expression=\"scelta!=&quot;carta&quot; and scelta!=&quot;forbici&quot; and scelta!=&quot;sasso&quot; and scelta!=&quot;esci&quot;\">\n                <output expression=\"&quot;devi scegliere tra: carta sasso o forbici&quot;\" newline=\"True\"/>\n                <input variable=\"scelta\"/>\n            </while>\n            <while expression=\"scelta!=&quot;esci&quot;\">\n                <while expression=\"scelta!=&quot;carta&quot; and scelta!=&quot;forbici&quot; and scelta!=&quot;sasso&quot;\">\n                    <output expression=\"&quot;devi scegliere tra: carta sasso o forbici&quot;\" newline=\"True\"/>\n                    <input variable=\"scelta\"/>\n                </while>\n                <assign variable=\"numero\" expression=\"random(2)\"/>\n                <if expression=\"numero==0\">\n                    <then>\n                        <assign variable=\"computer\" expression=\"&quot;carta&quot;\"/>\n                    </then>\n                    <else>\n                        <if expression=\"numero==1\">\n                            <then>\n                                <assign variable=\"computer\" expression=\"&quot;forbici&quot;\"/>\n                            </then>\n                            <else>\n                                <assign variable=\"computer\" expression=\"&quot;sasso&quot;\"/>\n                            </else>\n                        </if>\n                    </else>\n                </if>\n                <if expression=\"scelta==&quot;carta&quot; and computer==&quot;sasso&quot; or scelta==&quot;forbici&quot; and computer==&quot;carta&quot; or scelta==&quot;sasso&quot; and computer==&quot;forbici&quot;\">\n                    <then>\n                        <output expression=\"computer\" newline=\"True\"/>\n                        <output expression=\"&quot;hai vinto&quot;\" newline=\"True\"/>\n                    </then>\n                    <else>\n                        <if expression=\"scelta==&quot;carta&quot; and computer==&quot;carta&quot; or scelta==&quot;forbici&quot; and computer==&quot;forbici&quot; or scelta==&quot;sasso&quot; and computer==&quot;sasso&quot;\">\n                            <then>\n                                <output expression=\"computer\" newline=\"True\"/>\n                                <output expression=\"&quot;Pareggio&quot;\" newline=\"True\"/>\n                            </then>\n                            <else>\n                                <output expression=\"computer\" newline=\"True\"/>\n                                <output expression=\"&quot;Hai perso&quot;\" newline=\"True\"/>\n                            </else>\n                        </if>\n                    </else>\n                </if>\n                <output expression=\"&quot;rematch? (scrivi esci per uscire)&quot;\" newline=\"True\"/>\n                <input variable=\"scelta\"/>\n            </while>\n        </body>\n    </function>\n</flowgorithm>\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "d6c21466-b037-45d2-ad1e-47909149bd6b",
+      "cell_type": "code",
+      "source": "import random\nrandom.seed()   #Prepare random number generator\n\nprint(\"Carta,forbice o sasso?\")\nscelta = input()\nwhile scelta != \"carta\" and scelta != \"forbici\" and scelta != \"sasso\" and scelta != \"esci\":\n    print(\"devi scegliere tra: carta sasso o forbici\")\n    scelta = input()\nwhile scelta != \"esci\":\n    while scelta != \"carta\" and scelta != \"forbici\" and scelta != \"sasso\":\n        print(\"devi scegliere tra: carta sasso o forbici\")\n        scelta = input()\n    numero = int(random.random() * 2)\n    if numero == 0:\n        computer = \"carta\"\n    else:\n        if numero == 1:\n            computer = \"forbici\"\n        else:\n            computer = \"sasso\"\n    if scelta == \"carta\" and computer == \"sasso\" or scelta == \"forbici\" and computer == \"carta\" or scelta == \"sasso\" and computer == \"forbici\":\n        print(computer)\n        print(\"hai vinto\")\n    else:\n        if scelta == \"carta\" and computer == \"carta\" or scelta == \"forbici\" and computer == \"forbici\" or scelta == \"sasso\" and computer == \"sasso\":\n            print(computer)\n            print(\"Pareggio\")\n        else:\n            print(computer)\n            print(\"Hai perso\")\n    print(\"rematch? (scrivi esci per uscire)\")\n    scelta = input()\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "23b485ea-e245-4e15-b0bb-816b8ae591ff",
+      "cell_type": "code",
+      "source": "<?xml version=\"1.0\"?>\n<flowgorithm fileversion=\"4.2\">\n    <attributes>\n        <attribute name=\"name\" value=\"controllo se numero dispari o pari\"/>\n        <attribute name=\"authors\" value=\"Frank\"/>\n        <attribute name=\"about\" value=\"\"/>\n        <attribute name=\"saved\" value=\"2024-10-17 08:50:55 \"/>\n        <attribute name=\"created\" value=\"RnJhbms7TEFQVE9QLUFIVDIwMkpEOzIwMjQtMTAtMTc7IjA4OjM4OjI4ICI7MjcxOQ==\"/>\n        <attribute name=\"edited\" value=\"RnJhbms7TEFQVE9QLUFIVDIwMkpEOzIwMjQtMTAtMTc7IjA4OjUwOjU1ICI7MjsyODIy\"/>\n    </attributes>\n    <function name=\"Main\" type=\"None\" variable=\"\">\n        <parameters/>\n        <body>\n            <declare name=\"numero\" type=\"Integer\" array=\"False\" size=\"\"/>\n            <output expression=\"&quot;Dammi un numero&quot;\" newline=\"True\"/>\n            <input variable=\"numero\"/>\n            <if expression=\"numero&lt;0\">\n                <then>\n                    <output expression=\"&quot;numero maggiore di zero&quot;\" newline=\"True\"/>\n                </then>\n                <else>\n                    <if expression=\"numero==0\">\n                        <then>\n                            <output expression=\"&quot;numero uguale a zero&quot;\" newline=\"True\"/>\n                        </then>\n                        <else>\n                            <output expression=\"&quot;numero minore di zero&quot;\" newline=\"True\"/>\n                        </else>\n                    </if>\n                </else>\n            </if>\n            <if expression=\"numero%2=0\">\n                <then>\n                    <output expression=\"&quot;numero pari&quot;\" newline=\"True\"/>\n                </then>\n                <else>\n                    <output expression=\"&quot;numero dispari&quot;\" newline=\"True\"/>\n                </else>\n            </if>\n        </body>\n    </function>\n</flowgorithm>\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "9466251c-8fe1-420a-bbac-4f218bc5dd25",
+      "cell_type": "code",
+      "source": "print(\"Dammi un numero\")\nnumero = int(input())\nif numero < 0:\n    print(\"numero maggiore di zero\")\nelse:\n    if numero == 0:\n        print(\"numero uguale a zero\")\n    else:\n        print(\"numero minore di zero\")\nif numero % 2 == 0:\n    print(\"numero pari\")\nelse:\n    print(\"numero dispari\")\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "85c1e116-f91d-41b9-bfa1-7365cf2fab01",
+      "cell_type": "code",
+      "source": "<?xml version=\"1.0\"?>\n<flowgorithm fileversion=\"4.2\">\n    <attributes>\n        <attribute name=\"name\" value=\"Fattoriale di un numero\"/>\n        <attribute name=\"authors\" value=\"Frank\"/>\n        <attribute name=\"about\" value=\"\"/>\n        <attribute name=\"saved\" value=\"2024-10-21 11:38:39 \"/>\n        <attribute name=\"created\" value=\"RnJhbms7TEFQVE9QLUFIVDIwMkpEOzIwMjQtMTAtMjE7IjExOjEyOjE3ICI7MjY5OA==\"/>\n        <attribute name=\"edited\" value=\"RnJhbms7TEFQVE9QLUFIVDIwMkpEOzIwMjQtMTAtMjE7IjExOjM4OjM5ICI7MjsyODE5\"/>\n    </attributes>\n    <function name=\"Main\" type=\"None\" variable=\"\">\n        <parameters/>\n        <body>\n            <declare name=\"lista, quadrati\" type=\"Integer\" array=\"True\" size=\"3\"/>\n            <declare name=\"i\" type=\"Integer\" array=\"False\" size=\"\"/>\n            <output expression=\"&quot;Ciao calcolo il quadrato di tutti gli elementi nella lista&quot;\" newline=\"True\"/>\n            <for variable=\"i\" start=\"0\" end=\"2\" direction=\"inc\" step=\"1\">\n                <input variable=\"lista[i]\"/>\n            </for>\n            <for variable=\"i\" start=\"0\" end=\"2\" direction=\"inc\" step=\"1\">\n                <assign variable=\"quadrati[i]\" expression=\"lista[i]^2\"/>\n                <output expression=\"lista[i]\" newline=\"True\"/>\n                <output expression=\"quadrati[i]\" newline=\"True\"/>\n            </for>\n        </body>\n    </function>\n</flowgorithm>\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "18353629-137f-49e9-8445-fc64bedb99f3",
+      "cell_type": "code",
+      "source": "lista = [0] * (3)\nquadrati = [0] * (3)\n\nprint(\"Ciao calcolo il quadrato di tutti gli elementi nella lista\")\nfor i in range(0, 2 + 1, 1):\n    lista[i] = int(input())\nfor i in range(0, 2 + 1, 1):\n    quadrati[i] = lista[i] ** 2\n    print(lista[i])\n    print(quadrati[i])\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "7aeb178c-c9aa-404a-8e47-20c0d5c57215",
+      "cell_type": "code",
+      "source": "<?xml version=\"1.0\"?>\n<flowgorithm fileversion=\"4.2\">\n    <attributes>\n        <attribute name=\"name\" value=\"lista fattoriali\"/>\n        <attribute name=\"authors\" value=\"Frank\"/>\n        <attribute name=\"about\" value=\"\"/>\n        <attribute name=\"saved\" value=\"2024-10-21 11:47:46 \"/>\n        <attribute name=\"created\" value=\"RnJhbms7TEFQVE9QLUFIVDIwMkpEOzIwMjQtMTAtMjE7IjExOjM5OjM2ICI7MjcwOA==\"/>\n        <attribute name=\"edited\" value=\"RnJhbms7TEFQVE9QLUFIVDIwMkpEOzIwMjQtMTAtMjE7IjExOjQ3OjQ2ICI7MTsyODE2\"/>\n    </attributes>\n    <function name=\"Main\" type=\"None\" variable=\"\">\n        <parameters/>\n        <body>\n            <declare name=\"lista, fattoriali\" type=\"Integer\" array=\"True\" size=\"3\"/>\n            <declare name=\"i, k, risultato\" type=\"Integer\" array=\"False\" size=\"\"/>\n            <output expression=\"&quot;dammi 3 numeri dei quali vuoi il fattoriale&quot;\" newline=\"True\"/>\n            <for variable=\"i\" start=\"0\" end=\"2\" direction=\"inc\" step=\"1\">\n                <input variable=\"lista[i]\"/>\n            </for>\n            <for variable=\"i\" start=\"0\" end=\"2\" direction=\"inc\" step=\"1\">\n                <assign variable=\"risultato\" expression=\"1\"/>\n                <for variable=\"k\" start=\"1\" end=\"lista[i]\" direction=\"inc\" step=\"1\">\n                    <assign variable=\"risultato\" expression=\"risultato*k\"/>\n                    <assign variable=\"fattoriali[i]\" expression=\"risultato\"/>\n                </for>\n                <output expression=\"fattoriali[i]\" newline=\"True\"/>\n            </for>\n        </body>\n    </function>\n</flowgorithm>\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    },
+    {
+      "id": "a49eed52-7a79-4187-b77e-d16ba0725622",
+      "cell_type": "code",
+      "source": "lista = [0] * (3)\nfattoriali = [0] * (3)\n\nprint(\"dammi 3 numeri dei quali vuoi il fattoriale\")\nfor i in range(0, 2 + 1, 1):\n    lista[i] = int(input())\nfor i in range(0, 2 + 1, 1):\n    risultato = 1\n    for k in range(1, lista[i] + 1, 1):\n        risultato = risultato * k\n        fattoriali[i] = risultato\n    print(fattoriali[i])\n\nprint(\"Ciao calcoliamo l'aria di un quadrato Dammi il lato del quadrato\")\nl = float(input())\nwhile l <= 0:\n    print(\"Scemo!Dammi un lato positivo\")\n    l = float(input())\nprint(\"Calcolo l'aria del quadrato\")\na = l ** 2\nprint(\"L'aria del quadrato è:\")\nprint(a)\n\nprint(\"Ciao, scrivi Q per calcolare l'area del quadrato oppure T per l'aria del triangolo\")\nscelta = input()\nif scelta == \"Q\":\n    print(\"Hai selezionato quadrato, dammi la misura del lato\")\n    l = float(input())\n    while l <= 0:\n        print(\"Selezionare un lato positivo\")\n        l = float(input())\n    print(\"Calcolo l'aria...\")\n    a = l ** 2\nelse:\n    if scelta == \"T\":\n        print(\"Hai selezionato triangolo, dammi la misura della base\")\n        b = float(input())\n        while b <= 0:\n            print(\"Selezionare una base positiva\")\n            b = float(input())\n        print(\"Dammi l'altezza\")\n        h = float(input())\n        while h <= 0:\n            print(\"Selezionare un'altezza positiva\")\n            h = float(input())\n        a = b ** h / 2\n    else:\n        print(\"T'avevo detto di scegliere T o Q\")\n        a = 0\nprint(\"L'aria della figura è:\")\nprint(a)\n\nimport random\nrandom.seed()   #Prepare random number generator\n\nprint(\"Carta,forbice o sasso?\")\nscelta = input()\nwhile scelta != \"carta\" and scelta != \"forbici\" and scelta != \"sasso\" and scelta != \"esci\":\n    print(\"devi scegliere tra: carta sasso o forbici\")\n    scelta = input()\nwhile scelta != \"esci\":\n    while scelta != \"carta\" and scelta != \"forbici\" and scelta != \"sasso\":\n        print(\"devi scegliere tra: carta sasso o forbici\")\n        scelta = input()\n    numero = int(random.random() * 2)\n    if numero == 0:\n        computer = \"carta\"\n    else:\n        if numero == 1:\n            computer = \"forbici\"\n        else:\n            computer = \"sasso\"\n    if scelta == \"carta\" and computer == \"sasso\" or scelta == \"forbici\" and computer == \"carta\" or scelta == \"sasso\" and computer == \"forbici\":\n        print(computer)\n        print(\"hai vinto\")\n    else:\n        if scelta == \"carta\" and computer == \"carta\" or scelta == \"forbici\" and computer == \"forbici\" or scelta == \"sasso\" and computer == \"sasso\":\n            print(computer)\n            print(\"Pareggio\")\n        else:\n            print(computer)\n            print(\"Hai perso\")\n    print(\"rematch? (scrivi esci per uscire)\")\n    scelta = input()\n\nprint(\"Dammi un numero\")\nnumero = int(input())\nif numero < 0:\n    print(\"numero maggiore di zero\")\nelse:\n    if numero == 0:\n        print(\"numero uguale a zero\")\n    else:\n        print(\"numero minore di zero\")\nif numero % 2 == 0:\n    print(\"numero pari\")\nelse:\n    print(\"numero dispari\")\n\nlista = [0] * (3)\nquadrati = [0] * (3)\n\nprint(\"Ciao calcolo il quadrato di tutti gli elementi nella lista\")\nfor i in range(0, 2 + 1, 1):\n    lista[i] = int(input())\nfor i in range(0, 2 + 1, 1):\n    quadrati[i] = lista[i] ** 2\n    print(lista[i])\n    print(quadrati[i])\n",
+      "metadata": {
+        "trusted": true
+      },
+      "outputs": [],
+      "execution_count": null
+    }
+  ]
+}
